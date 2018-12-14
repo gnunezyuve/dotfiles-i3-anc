@@ -50,19 +50,22 @@ bindsym $mod+Shift+Return exec --no-startup-id i3-dmenu-desktop
 # Network Manager
 exec --no-startup-id nm-applet
 
-#Davmail
-exec --no-startup-id davmail
-
-#Monitor
+# Monitor
 exec --no-startup-id monitor
+
+# Altgr-intl keyboard
+exec --no-startup-id setxkbmap -layout us -variant altgr-intl
+
+# Wallpaper 
+exec --no-startup-id nitrogen --restore
+
+# Shutter
+exec --no-startup-id shutter
 
 # Iceweasel
 bindsym $mod+i exec iceweasel -new-window
 bindsym $mod+Shift+i exec "iceweasel -new-window -new-instance"
 
-# Idioma del teclado
-exec --no-startup-id "setxkbmap -layout es"
-exec --no-startup-id "setxkbmap -device 15 -layout es" 
 # Bloquear PC
 bindsym $mod+Shift+p exec "i3lock --color 000000"
 
@@ -167,10 +170,10 @@ mode "resize" {
         bindsym ntilde resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -183,7 +186,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command /home/gabrieln/i3status_prueba.sh
 	position bottom
 	tray_output primary
 	colors{
