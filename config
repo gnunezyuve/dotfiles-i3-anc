@@ -72,11 +72,10 @@ bindsym $mod+Shift+i exec "iceweasel -new-window -new-instance"
 bindsym $mod+Shift+p exec "i3lock --color 000000"
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-# bindsym $mod+ntilde focus right
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -85,10 +84,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ntilde move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -96,11 +95,12 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+h split h
-
 # split in vertical orientation
 bindsym $mod+v split v
+
+# split in horizontal orientation
+bindsym $mod+Shift+v split h
+
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -152,14 +152,6 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-
-##########
-# split in horizontal orientation
-bindsym $mod+Shift+h split h
-
-# split in vertical orientation
-bindsym $mod+Shift+v split v
-##########
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -219,15 +211,7 @@ bar {
 # Hide the side window borders & Window title with new_window 1pixel 
 hide_edge_borders both
 new_window 1pixel 
-
-
-
-
-
-
-
-
-
+mouse_warping none
 
 #i3gaps
 #
