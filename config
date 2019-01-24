@@ -214,6 +214,7 @@ bar {
 
 # Hide the side window borders & Window title with new_window 1pixel 
 # hide_edge_borders both
+  for_window [class="^.*"] border pixel 2
   new_window 1pixel 
 # mouse_warping none
 
