@@ -48,9 +48,6 @@ bindsym $mod+Return exec dmenu_run -f -i -p \> -nf '#00ff00'
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+Return exec --no-startup-id i3-dmenu-desktop
 
-# Wallpaper
-#exec --no-startup-id nitrogen
-
 # Network Manager
 exec --no-startup-id nm-applet
 
@@ -64,7 +61,7 @@ exec --no-startup-id setxkbmap -layout us -variant altgr-intl
 exec --no-startup-id nitrogen --restore
 
 # Shutter
-exec --no-startup-id shutter
+# exec --no-startup-id shutter
 
 exec --no-startup-id compton --config ~/.i3/compton.conf
 
@@ -199,7 +196,7 @@ bindsym $mod+r mode "resize"
 bar {
 #     status_command /home/gabrieln/i3status_prueba.sh
        status_command i3blocks
-	position bottom
+	position top
 	tray_output primary
 	colors{
 		# Whole color settings
@@ -216,9 +213,9 @@ bar {
 }
 
 # Hide the side window borders & Window title with new_window 1pixel 
-hide_edge_borders both
-new_window 1pixel 
-mouse_warping none
+# hide_edge_borders both
+  new_window 1pixel 
+# mouse_warping none
 
 #i3gaps
 #
