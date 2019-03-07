@@ -1,14 +1,11 @@
 #!/bin/sh
+
+# Script made by the boomer of Luke Smith. 
+# I made a little modification on the push notification. 
 [ "$(stat -c %y /tmp/weatherreport | awk '{print $1}')" != "$(date '+%Y-%m-%d')" ] && getforecast
 
 case $BLOCK_BUTTON in
     1) $TERMINAL -e less -S /tmp/weatherreport ;;
-#    3) pgrep -x dunst >/dev/null && notify-send "<b>🌈 Weather module:</b>
-#- Click for wttr.in forecast.
-#☔: Chance of rain/snow
-#❄: Daily low
-#🌞: Daily high" 
-#   3) notify-send "$(curl -s wttr.in | head -7 | tail -5 | sed 's/\x1b\[[0-9;]*m//g')";;
     3) notify-send "$(cat /tmp/weatherreport | head -7 | tail -5 | sed 's/\x1b\[[0-9;]*m//g')";;
 esac
 
