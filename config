@@ -10,7 +10,6 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -58,7 +57,8 @@ exec --no-startup-id monitor
 exec --no-startup-id setxkbmap -layout us -variant altgr-intl
 
 # Wallpaper 
-exec --no-startup-id nitrogen --restore
+ exec --no-startup-id nitrogen --restore
+#exec_always feh --bg-fill $HOME/Pictures/Wallpapers/BpTwvHA.png
 
 # Shutter
 # exec --no-startup-id shutter
@@ -70,10 +70,28 @@ bindsym $mod+i exec iceweasel -new-window
 bindsym $mod+Shift+i exec "iceweasel -new-window -new-instance"
 
 # Bloquear PC
-bindsym $mod+Shift+p exec "i3lock --color 000000"
+ bindsym $mod+Shift+p exec "i3lock --color 000000"
+#bindsym $mod+Shift+p exec "i3lock  -e -t -i /home/gabrieln/Pictures/Wallpapers/BpTwvHA.png"
 
 # Reiniciar mortimerbl
 bindsym $mod+Shift+m exec "mortimer"
+
+set $monitor1 "DP-1"
+set $monitor2 "DP-2"
+
+workspace 1 output $monitor1 
+workspace 2 output $monitor1 
+workspace 3 output $monitor1 
+workspace 4 output $monitor1 
+
+workspace 7 output $monitor2 
+workspace 8 output $monitor2 
+workspace 9 output $monitor2 
+workspace 10 output $monitor2 
+
+assign [class="Eclipse"] 2
+
+exec_always gaps inner all plus 5
 
 # change focus
 bindsym $mod+h focus left
@@ -135,10 +153,13 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
+
 # Cycle through active workspaces
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
+# experiment: side note: it worked
+# bindsym KP_Insert workspace next
 
 # Move workspaces to a different display
 bindsym $mod+Ctrl+Left move workspace to output left
@@ -195,8 +216,10 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 #     status_command /home/gabrieln/i3status_prueba.sh
-       status_command i3blocks
-	position top
+  status_command  i3blocks -c $HOME/.i3/i3blocks.conf 
+	position top   
+  mode dock
+  modifier None
 	tray_output primary
 	colors{
 		# Whole color settings
