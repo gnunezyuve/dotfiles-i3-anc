@@ -91,7 +91,7 @@ workspace 10 output $monitor2
 
 assign [class="Eclipse"] 2
 
-exec_always gaps inner all plus 5
+exec_always i3 gaps inner all plus 5
 
 # change focus
 bindsym $mod+h focus left
