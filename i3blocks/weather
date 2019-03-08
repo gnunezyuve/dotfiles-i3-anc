@@ -4,10 +4,9 @@
 # I made a little modification on the push notification. 
 [ "$(stat -c %y /tmp/weatherreport | awk '{print $1}')" != "$(date '+%Y-%m-%d')" ] && getforecast
 
-case $BLOCK_BUTTON in
-    1) $TERMINAL -e less -S /tmp/weatherreport ;;
-    3) notify-send "$(cat /tmp/weatherreport | head -7 | tail -5 | sed 's/\x1b\[[0-9;]*m//g')";;
-esac
+if [ $BLOCK_BUTTON -eq 1 ]; then
+  notify-send -u normal -t 4000 "$(cat /tmp/weatherreport | head -7 | tail -5 | sed 's/\x1b\[[0-9;]*m//g')"
+fi
 
 printf "%s" "$(sed '16q;d' /tmp/weatherreport | grep -wo "[0-9]*%" | sort -n | sed -e '$!d' | sed -e "s/^/☔ /g" | tr -d '\n')"
 
