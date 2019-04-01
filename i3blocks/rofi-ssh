@@ -1,0 +1,6 @@
+if [ $BLOCK_BUTTON -eq 1 ]; then
+	rofi -show ssh
+fi
+
+echo 💻
+ 
