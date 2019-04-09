@@ -37,6 +37,8 @@ bindsym $mod+t exec terminator
 # kill focused window
 bindsym $mod+Shift+q kill
 
+bindsym $mod+Shift+b exec surf openpuppies.com
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -f  -i -p \> -nf '#00ff00'
 bindsym $mod+Return exec dmenu_run -f -i -p \> -nf '#00ff00'
